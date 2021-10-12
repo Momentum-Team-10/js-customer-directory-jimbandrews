@@ -3,13 +3,13 @@ let container = document.getElementById("all-customers");
 for (customer of customers) {
     let custCard = document.createElement("div");
 
-    custCard.innerHTML = `<img src=${customer.picture.large} />
-    <p>${capitalizeName(customer.name.first)} ${capitalizeName(customer.name.last)}</p>
-    <p>${customer.email}</p>
-    <p>${customer.location.street.number} ${customer.location.street.name}</p>
-    <p>${customer.location.city}, ${nameToAbbr(customer.location.state)} ${customer.location.postcode}</p>
-    <p>DOB: ${moment(customer.dob.date).format("MMM D, YYYY")}</p>
-    <p>Customer Since: ${moment(customer.registered.date).format("MMM D, YYYY")}</p>`
+    custCard.innerHTML = `<img src=${customer.picture.thumbnail} />
+    <h2 id="name">${capitalizeName(customer.name.first)} ${capitalizeName(customer.name.last)}</h2>
+    <p id="email">${customer.email}</p>
+    <p class="address" id="address1">${customer.location.street.number} ${customer.location.street.name}</p>
+    <p class="address" id="address2">${customer.location.city}, ${nameToAbbr(customer.location.state)} ${customer.location.postcode}</p>
+    <p class="date">DOB: ${moment(customer.dob.date).format("MMM D, YYYY")}</p>
+    <p class="date">Customer since: ${moment(customer.registered.date).format("MMM D, YYYY")}</p>`
     
     container.appendChild(custCard);
 }
