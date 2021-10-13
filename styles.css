@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Lora', serif;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#all-customers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+p, h2, img {
+    text-align: center;
+    justify-self: center;
+}
+
+.customer-card {
+    display: grid;
+    margin: 10px 15px 50px 15px;
+}
+
+#email {
+    color: #c7c7c7;
+}
